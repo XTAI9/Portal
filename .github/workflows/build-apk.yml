@@ -59,9 +59,9 @@ jobs:
           
           # 2. 重新定位安装包路径（Debug包生成的路径和文件名不同）
           # 下面的命令会自动在 apk 目录下找到 debug 版的 apk 并赋值给变量，防止后续步骤报错
-          echo "APK_FILE_ALL=$(find app/build/outputs/apk -name '*-debug.apk' | head -n 1)" >> $GITHUB_ENV
-          echo "APK_FILE_ARM64=$(find app/build/outputs/apk -name '*-debug.apk' | head -n 1)" >> $GITHUB_ENV
-          echo "APK_FILE_X86_64=$(find app/build/outputs/apk -name '*-debug.apk' | head -n 1)" >> $GITHUB_ENV
+          echo "APK_FILE_ALL=$(find app/build/outputs/apk -name '*.apk' | head -n 1)" >> $GITHUB_ENV
+          echo "APK_FILE_ARM64=$(find app/build/outputs/apk -name '*.apk' | head -n 1)" >> $GITHUB_ENV
+          echo "APK_FILE_X86_64=$(find app/build/outputs/apk -name '*.apk' | head -n 1)" >> $GITHUB_ENV
 
       - name: Set Portal Version
         run: |
